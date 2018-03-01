@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="electro_electrodomesticos_action" name="electrodomesticos"
+                     res_model="electro.electrodomesticos" />
+
+
+        <record id="electro_electrodomesticos_view_tree" model="ir.ui.view">
+            <field name="name">Electrodomesticos almacenados</field>
+            <field name="model">electro.electrodomesticos</field>
+            <field name="arch" type="xml">
+
+                <tree>
+                    <field name="tipo" />
+                    <field name="marca" />
+                    <field name="modelo" />
+                    <field name="precio" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="electro_electrodomesticos_view_form" model="ir.ui.view">
+            <field name="name">Agregar electrodomestico</field>
+            <field name="model">electro.electrodomesticos</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="limpiar" type="object" string="Limpia" class="oe_highlight" />
+                        <button name="limpia_todo" type="object" string="Limpia todo" class="oe_highlight" />
+
+
+                    </header>
+                    <group>
+                        <field name="tipo" />
+                        <field name="marca" />
+                        <field name="modelo" />
+                        <field name="precio" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="electro_electrodomesticos_view_search" model="ir.ui.view">
+            <field name="name">Busqueda de electrodomesticos</field>
+            <field name="model">electro.electrodomesticos</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="tipo" />
+                    <field name="marca" />
+                    <field name="modelo" />
+                    <field name="precio" />
+                </search>
+            </field>
+        </record>
+        <menuitem name="Electrodomesticos2" id="menu_electrodomesticos" sequence="10" />
+         <menuitem name="Inicio" id="menu_inicio" parent="menu_electrodomesticos" sequence="10"/>
+        <menuitem name="Electrodomesticos" id="menu_electrodomesticos2" action="electro_electrodomesticos_action" parent="menu_inicio" sequence="10"/>
+    </data>
+</odoo>

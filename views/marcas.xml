@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="electro_marcas_action" name="marcas"
+                     res_model="electro.marcas" />
+
+       <menuitem name="marcas" id="menu_marcas" action="electro_marcas_action" parent="menu_inicio" sequence="17"/>
+
+
+        <record id="electro_marcas_view_tree" model="ir.ui.view">
+            <field name="name">Marcas almacenadas</field>
+            <field name="model">electro.marcas</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="codigo" />
+                    <field name="nombre" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="electro_marcas_view_form" model="ir.ui.view">
+            <field name="name">Agregar marca</field>
+            <field name="model">electro.marcas</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="codigo" />
+                        <field name="nombre" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="electro_marcas_view_search" model="ir.ui.view">
+            <field name="name">Busqueda de marcas</field>
+            <field name="model">electro.marcas</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="codigo" />
+                    <field name="nombre" />
+                </search>
+            </field>
+        </record>
+
+    </data>
+</odoo>
